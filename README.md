@@ -28,8 +28,8 @@ Este repositório contém uma série de implementações práticas utilizando o 
 
 1.  Clone o repositório:
     ```bash
-    git clone [https://github.com/jardianagalvao/google-adk-ai-agents.git](https://github.com/jardianagalvao/google-adk-ai-agents.git)
-    cd google-adk-ai-agents
+   git clone [https://github.com/jardianagalvao/google-adk-ai-agents.git](https://github.com/jardianagalvao/google-adk-ai-agents.git)
+   cd google-adk-ai-agents
     ```
 
 2.  Crie e ative o ambiente virtual:
