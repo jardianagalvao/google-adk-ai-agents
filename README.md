@@ -1,86 +1,56 @@
-# ADK Day Trip Planning Agent
+# 🤖 Google ADK - AI Agents Study Case
 
-A specialized AI agent built with Google's AI Development Kit (ADK) that generates creative and fun day trip plans based on user preferences, location, and budget constraints.
+Este repositório contém uma série de implementações práticas utilizando o **Google Agent Development Kit (ADK)**. O objetivo é explorar diferentes arquiteturas de agentes de IA, desde execuções simples até orquestrações complexas de múltiplos agentes.
 
-**Please make sure to check [goo.gle/advancedadk](https://goo.gle/advancedadk) to set up this project.**
+## 🚀 Funcionalidades Implementadas
 
-## Features
+* **Single Agent:** Implementação básica de um assistente de IA.
+* **Sequential Workflow:** Cadeia de agentes onde o output de um (ex: Foodie Agent) serve de input para o próximo (ex: Transportation Agent).
+* **Routing Agent:** Um "diretor" que analisa a intenção do usuário e despacha a tarefa para o especialista correto.
+* **Adaptive Memory:** Agentes que lembram preferências do usuário para planejar roteiros de vários dias.
+* **Contexto Local:** Exemplos adaptados para a realidade de **Fortaleza, CE**, incluindo pontos turísticos e gastronomia regional.
 
-- 🎯 **Personalized Planning**: Generates trip suggestions based on user interests and preferences
-- 📍 **Location-Aware**: Works with city names, addresses, or GPS coordinates
-- 💰 **Budget-Conscious**: Targets moderate budget activities (affordable yet valuable)
-- 🔍 **Real-Time Search**: Uses Google Search to find current events and venues
-- 📅 **Date-Specific**: Plans activities for specific weekend dates
-- 🎨 **Creative Suggestions**: Maximum 3 distinct activities per plan with detailed location information
+## 🛠️ Tecnologias Utilizadas
 
-## Tutorial
+* **Linguagem:** Python 3.10+
+* **Modelo de IA:** Gemini 2.5 Flash (via Google GenAI API)
+* **Framework:** Google ADK (Agent Development Kit)
+* **Banco de Dados:** SQLite (para persistência de sessões)
 
-For a guided walkthrough of how to set up this project, please refer to the [tutorial](https://goo.gle/advancedadk).
+## 📋 Pré-requisitos
 
-## Prerequisites
+1. Obtenha uma API Key no [Google AI Studio](https://aistudio.google.com/).
+2. Python instalado (v3.10 ou superior).
 
-- Python 3.8 or higher
-- Google Cloud SDK installed and authenticated (`gcloud auth login`)
+## 🔧 Configuração e Instalação
 
-## Quick Setup
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/jardianagalvao/google-adk-ai-agents.git](https://github.com/jardianagalvao/google-adk-ai-agents.git)
+   cd google-adk-ai-agents
+   ```
 
-This project uses a setup script to configure the environment automatically. Simply run the script for your operating system.
+   
+2.  Crie e ative o ambiente virtual:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # No Windows: venv\Scripts\activate
+    ```
 
-### For Mac/Linux Users
+3.  Instale as dependências:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-chmod +x setup_venv.sh
-./setup_venv.sh
-```
-
-### For Windows Users
-
-```cmd
-setup_venv.bat
-```
-
-### What the Script Does
-
-The setup script will:
-
-1.  **Check for Python**: Ensures you have Python 3.8 or higher.
-2.  **Create a Virtual Environment**: Sets up a dedicated `.adk_env` directory.
-3.  **Install Dependencies**: Installs the required Python packages from `requirements.txt`.
-4.  **Prompt for Project ID**: Asks for your Google Cloud Project ID.
-5.  **Create `.env` File**: Generates a `.env` file in the root directory with the following configuration:
-
+4.  **Configuração de Variáveis de Ambiente:**
+    Crie um arquivo `.env` dentro da pasta do agente que deseja rodar (ex: `agent/.env`) com o seguinte conteúdo:
     ```env
-    GOOGLE_GENAI_USE_VERTEXAI=TRUE
-    GOOGLE_CLOUD_PROJECT=your_project_id
-    GOOGLE_CLOUD_LOCATION=us-central1
+    GOOGLE_GENAI_USE_VERTEXAI=FALSE
+    GOOGLE_API_KEY=SUA_CHAVE_AQUI
     ```
 
-## Running the Agent
+## 💻 Como Executar
 
-After the setup is complete:
-
-1.  **Activate the virtual environment**:
-
-    **Mac/Linux:**
-    ```bash
-    source .adk_env/bin/activate
-    ```
-
-    **Windows:**
-    ```cmd
-    .adk_env\Scripts\activate
-    ```
-
-2.  **Run the ADK web interface**:
-
-    ```bash
-    adk web
-    ```
-
-## Deactivating the Environment
-
-When you're done, you can deactivate the virtual environment:
-
+### Via CLI (Linha de Comando)
 ```bash
-deactivate
-```
+adk web
