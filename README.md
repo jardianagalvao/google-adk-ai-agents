@@ -28,3 +28,29 @@ Este repositório contém uma série de implementações práticas utilizando o 
    ```bash
    git clone [https://github.com/jardianagalvao/google-adk-ai-agents.git](https://github.com/jardianagalvao/google-adk-ai-agents.git)
    cd google-adk-ai-agents
+   ```
+
+   
+2.  Crie e ative o ambiente virtual:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # No Windows: venv\Scripts\activate
+    ```
+
+3.  Instale as dependências:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Configuração de Variáveis de Ambiente:**
+    Crie um arquivo `.env` dentro da pasta do agente que deseja rodar (ex: `agent/.env`) com o seguinte conteúdo:
+    ```env
+    GOOGLE_GENAI_USE_VERTEXAI=FALSE
+    GOOGLE_API_KEY=SUA_CHAVE_AQUI
+    ```
+
+## 💻 Como Executar
+
+### Via CLI (Linha de Comando)
+```bash
+adk web
